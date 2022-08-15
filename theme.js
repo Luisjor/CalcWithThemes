@@ -12,6 +12,5 @@ ThemeSelector.forEach(item => {
 
 function setTheme(themeName) {
     localStorage.setItem('theme', themeName);
-    console.log(localStorage.theme)
     document.documentElement.className = themeName;
 }

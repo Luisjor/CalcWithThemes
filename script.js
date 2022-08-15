@@ -6,11 +6,12 @@ const ScreenNums = document.getElementById("ScreenSection");
 document.documentElement.className = localStorage.theme;
 
 var currentNum = "";
-var previousNum = "";
+var previousNum = 0;
 var resultValue;
 var numKey;
 var code;
 var operand;
+var ans;
 
 // Keyboard listener
 document.addEventListener('keydown', (event) => {
@@ -47,13 +48,8 @@ FunctButtons.forEach(element => {
 // Get number and print it
 function screenPrint() {
     if (numKey === "." && currentNum.includes(".")) return;
-    currentNum += numKey;    
+    currentNum += numKey;
     ScreenNums.innerText = currentNum.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-    if (resultValue === true) {
-        currentNum = "";
-        resultValue = false;
-        
-    }
     }
 
 
@@ -62,11 +58,11 @@ function Operands() {
     if (code === "RESET" || code.includes("Escape")) {
         ResetButton();
     }
-    if (code === "Equal" || code.includes("Enter")) {
-        EqualButton();
-    }
     if (code === "DEL" || code === "Backspace") {
         DELButton();
+    }
+    if (code === "Equal" || code.includes("Enter")) {
+        EqualButton();
     }
     if (code.includes("Add") || numKey.includes("+")) {
         AddButton();
@@ -84,60 +80,54 @@ function Operands() {
 
 function nextNumber() {
     previousNum = Number(currentNum);
+    numKey = "";
     currentNum = "";
+    console.log("Current: ", currentNum, "Previous: ", previousNum)
 }
 
 function AddButton() {
-    if (previousNum !== "") {
-        EqualButton()
-    }
-    nextNumber();
     operand = "Add"
+    nextNumber()
 }
 
 function SubtractButton() {
-    if (previousNum !== "") {
-        EqualButton()
-    }
-    nextNumber();
     operand = "Subtract"
+    nextNumber()
 }
+
 
 function MultiplyButton() {
-    if (previousNum !== "") {
-        EqualButton()
-    }
-    
-    nextNumber();
     operand = "Multiply"
+    nextNumber()
 }
 
+
 function DivideButton() {
-    if (previousNum !== "") {
-        EqualButton()
-    }
-    nextNumber();
     operand = "Divide"
+    nextNumber()
 }
+
 
 function EqualButton() {
     if (operand === "Add") {
-        currentNum = previousNum + Number(currentNum);
+        currentNum = previousNum + Number(currentNum)
     }
     if (operand === "Subtract") {
-        currentNum = previousNum - Number(currentNum);
+        currentNum = previousNum - Number(currentNum)
     }
     if (operand === "Multiply") {
-        currentNum = previousNum * Number(currentNum);
+        currentNum = previousNum * Number(currentNum)
     }
     if (operand === "Divide") {
-        currentNum = previousNum / Number(currentNum);
+        currentNum = previousNum / Number(currentNum)
     }
-        numKey = "";
-        previousNum = "";
-        resultValue = true;
-        screenPrint();
-    }
+
+    ans = currentNum
+    numKey = "";
+    screenPrint()
+    currentNum = "" 
+}
+
 
 
 function ResetButton() {
@@ -158,5 +148,3 @@ function DELButton() {
 
 
     
-
-
