@@ -1,4 +1,10 @@
+
 const ThemeSelector = document.querySelectorAll(".themeSelector");
+document.documentElement.className = localStorage.theme;
+
+if(document.documentElement.className === "undefined") {
+    document.documentElement.className = "theme-blue"
+} else {document.documentElement.className = localStorage.theme;}
 
 ThemeSelector.forEach(item => {
     if (item.value === localStorage.theme) {
