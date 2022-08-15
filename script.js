@@ -85,23 +85,27 @@ function nextNumber() {
 }
 
 function AddButton() {
+    if (currentNum === "") return;
     operand = "Add"
     nextNumber()
 }
 
 function SubtractButton() {
+    if (currentNum === "") return;
     operand = "Subtract"
     nextNumber()
 }
 
 
 function MultiplyButton() {
+    if (currentNum === "") return;
     operand = "Multiply"
     nextNumber()
 }
 
 
 function DivideButton() {
+    if (currentNum === "") return;
     operand = "Divide"
     nextNumber()
 }
