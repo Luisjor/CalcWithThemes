@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap');
+
+.theme-blue {
+    --BG-Page: hsl(222, 26%, 31%);
+    --BG-Keypad: hsl(223, 31%, 20%);
+    --BG-Buttons: hsl(30, 25%, 89%);
+    --BG-Screen: hsl(224, 36%, 15%);
+    --BG-Buttons-Hover: #ffffff;
+    
+
+    --Text-Keys: hsl(221, 14%, 31%);
+    --Text-Equal: white;
+    --Text-Special: white;
+    --Text-Screen: white;
+
+    --BG-Special-Key: hsl(225, 21%, 49%);
+    --BG-Special-Hover: #a2b3e1;
+    --BG-Special-Equal: hsl(6, 63%, 50%);
+    --BG-Equal-Hover: #f96c5b;
+
+    --Shadow-Special-Key: hsl(224, 28%, 35%);
+    --Shadow-Special-Equal: hsl(6, 70%, 34%);
+    --Shadow-Buttons: hsl(28, 16%, 65%);
+}
+
+.theme-light {
+    --BG-Page: hsl(0, 0%, 90%);
+    --BG-Keypad: hsl(0, 5%, 81%);
+    --BG-Buttons: hsl(45, 7%, 89%);
+    --BG-Screen: hsl(0, 0%, 93%);
+    --BG-Buttons-Hover: #ffffff;
+
+
+    --Text-Keys: hsl(60, 10%, 19%);
+    --Text-Equal: white;
+    --Text-Special: white;
+    --Text-Screen: hsl(60, 10%, 19%);
+
+    --BG-Special-Key: hsl(185, 42%, 37%);
+    --BG-Special-Equal: hsl(25, 98%, 40%);
+    --BG-Equal-Hover: #ff8b38;
+    --BG-Special-Hover: #62b5bd;
+
+    --Shadow-Special-Key: hsl(185, 58%, 25%);
+    --Shadow-Special-Equal: hsl(25, 99%, 27%);
+    --Shadow-Buttons: hsl(35, 11%, 61%);
+}
+
+.theme-dark {
+    --BG-Page: hsl(268, 75%, 9%);
+    --BG-Keypad: hsl(268, 71%, 12%);
+    --BG-Buttons: hsl(268, 47%, 21%);
+    --BG-Screen: hsl(268, 71%, 12%);
+    --BG-Buttons-Hover: #6b34ac;
+
+    --Text-Keys: hsl(52, 100%, 62%);
+    --Text-Equal: hsl(198, 20%, 13%);
+    --Text-Special: white;
+    --Text-Screen: hsl(52, 100%, 62%);
+
+    --BG-Special-Key: hsl(281, 89%, 26%);
+    --BG-Special-Equal: hsl(176, 100%, 44%);
+    --BG-Equal-Hover: #94fff9;
+    --BG-Special-Hover: #8631b0;
+
+    --Shadow-Special-Key: hsl(285, 91%, 52%);
+    --Shadow-Special-Equal: hsl(177, 92%, 70%);
+    --Shadow-Buttons: hsl(290, 70%, 36%);
+}
+
+html {
+    background-color: var(--BG-Page);
+    font-size: 32px;
+    font-family: 'League Spartan', sans-serif;
+}
+
+body {
+    display: grid;
+    height: 100vh;
+    justify-content: center;
+    align-content: center;
+}
+
+h1 {
+    margin: 0px;
+    color: var(--Text-Screen);
+    margin-right: auto;
+}
+
+label {
+    color: var(--Text-Screen);
+    font-size: .4rem;
+}
+
+.container {
+    display: block;
+    position: relative;
+    padding-left: 25px;
+    top: 5px;
+    left: 3px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+.container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    right: 10px;
+  }
+
+  .container input:checked ~ .checkmark {
+    background-color: var(--BG-Special-Equal);
+    transition: .5s;
+  }
+
+form {
+    display: flex;
+    background-color: var(--BG-Screen);
+    border-radius: 15px;
+    margin-left: .5rem;
+    height: 30px;
+    padding: 0rem .1rem;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 5px;
+    height: 17px;
+    width: 17px;
+    border-radius: 50%;
+  }
+
+.themeNum {
+    position: relative;
+    top: -25px;
+    right: 15px;
+}
+
+#header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#CalcContainer {
+    display: grid;
+    gap: 20px;
+    width: 500px;
+}
+
+#ScreenSection {
+    display: flex;
+    justify-content: end;
+    align-content: center;
+    align-items: center;
+    height: 100px;
+    border-radius: 15px;
+    box-sizing: border-box;
+    padding: .5rem;
+    background-color: var(--BG-Screen);
+    color: var(--Text-Screen);
+    font-size: 1.5rem;
+}
+
+button {
+    margin: auto;
+    width: 100%;
+    height: 90%;
+    border-radius: 20px;
+    font-size: 32px;
+    font-family: 'League Spartan', sans-serif;
+    color: var(--Text-Keys);
+    border: none;
+    background-color: var(--BG-Buttons);
+    box-shadow: 0px 5px var(--Shadow-Buttons);
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--BG-Buttons-Hover);
+}
+
+#ButtonsSection {
+    display: grid;
+    box-sizing: border-box;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+    padding: 20px;
+    height: 500px;
+    border-radius: 15px;
+    background-color: var(--BG-Keypad);
+}
+
+.Reset, .DEL {
+    background-color: var(--BG-Special-Key);
+    color: var(--Text-Special);
+    box-shadow: 0px 5px var(--Shadow-Special-Key);
+}
+
+.Reset:hover, .DEL:hover {
+    background-color: var(--BG-Special-Hover);
+}
+
+.Equal {
+    grid-row: 5;
+    grid-column: 3 / span 2;
+    background-color: var(--BG-Special-Equal);
+    box-shadow: 0px 5px var(--Shadow-Special-Equal);
+    color: var(--Text-Equal);
+}
+
+.Equal:hover {
+    background-color: var(--BG-Equal-Hover);
+}
+
+.Reset {
+    grid-row: 5;
+    grid-column: 1 / span 2;
+}
+
+
+
+.DEL {
+    grid-row: 1;
+    grid-column: 4;
+}
+
+.Plus {
+    grid-row: 2;
+    grid-column: 4;
+}
+
+.Minus {
+    grid-row: 3;
+    grid-column: 4;
+}
+
+.Times {
+    grid-row: 4;
+    grid-column: 4;
+}
+
+.Dot {
+    grid-row: 4;
+    grid-column: 1;
+}
+
+.attribution {
+    font-size: 12px;
+}

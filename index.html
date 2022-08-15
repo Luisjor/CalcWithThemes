@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" class="theme-blue">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Jorge Chávez | Calculator app</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="CalcContainer">
+    <section id="header">
+      <h1>calc</h1>
+      <label>THEME</label>
+         <form>
+        <label class="container">
+          <label class="themeNum">1</label>
+          <input type="radio" value="theme-blue" name="theme" class="themeSelector">
+          <span class="checkmark"></span>
+        </label> 
+        <label class="container">  
+          <label class="themeNum">2</label>
+          <input type="radio" value="theme-light" name="theme" class="themeSelector">
+          <span class="checkmark"></span>
+        </label>
+        <label class="container"> 
+          <label class="themeNum">3</label>
+          <input type="radio" value="theme-dark" name="theme" class="themeSelector">
+          <span class="checkmark"></span>
+        </label>
+      </form>
+      
+
+    </section>
+    <section id="ScreenSection">
+      <p></p>
+    </section>
+    <section id="ButtonsSection">
+      <button class="numKey" value="7">7</button>
+      <button class="numKey" value="8">8</button>
+      <button class="numKey" value="9">9</button>
+      <button class="numKey" value="4">4</button>
+      <button class="numKey" value="5">5</button>
+      <button class="numKey" value="6">6</button>
+      <button class="numKey" value="1">1</button>
+      <button class="numKey" value="2">2</button>
+      <button class="numKey" value="3">3</button>
+      <button class="numKey" value="0">0</button>
+      <button class="numKey Dot" value=".">.</button>
+      <button class="function Reset" value="RESET">RESET</button>
+      <button class="function DEL" value="DEL">DEL</button>
+      <button class="function Equal" value="Equal">=</button>
+      <button class="function Plus" value="Add">+</button>
+      <button class="function Minus" value="Subtract">-</button>
+      <button class="function Times" value="Multiply">X</button>
+      <button class="function Substract" value="Divide">/</button>
+    </section>
+    
+
+  </main>
+
+
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+
+
+  <script src="script.js"></script>
+  <script src="theme.js"></script>
+</body>
+</html>
