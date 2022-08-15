@@ -82,7 +82,6 @@ function nextNumber() {
     previousNum = Number(currentNum);
     numKey = "";
     currentNum = "";
-    console.log("Current: ", currentNum, "Previous: ", previousNum)
 }
 
 function AddButton() {
@@ -125,7 +124,6 @@ function EqualButton() {
     ans = currentNum
     numKey = "";
     screenPrint()
-    currentNum = "" 
 }
 
 
